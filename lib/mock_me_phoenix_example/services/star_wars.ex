@@ -24,4 +24,20 @@ defmodule MockMePhoenixExample.Services.StarWars do
         {:error, "Failed with reason: #{reason}"}
     end
   end
+
+  def starships(id) do
+    case get("/starships/#{id}/") do
+      {:ok, %HTTPoison.Response{status_code: 200, body: response_body}} ->
+        {:ok, Jason.decode!(response_body)}
+
+      {:ok, %HTTPoison.Response{status_code: 404}} ->
+        {:not_found, "The starship with id #{id} was not found"}
+
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        {:error, "Failed with status code: #{status_code}"}
+
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, "Failed with reason: #{reason}"}
+    end
+  end
 end

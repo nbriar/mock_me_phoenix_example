@@ -16,4 +16,14 @@ defmodule MockMePhoenixExample.Services.StarWarsTest do
     MockMe.set_test_case(:swapi_people, :not_found)
     assert {:not_found, _} = StarWars.people(1)
   end
+
+  test "starships/1 returns success" do
+    MockMe.set_test_case(:swapi_starships, :success)
+    assert {:ok, _} = StarWars.starships(1)
+  end
+
+  test "starships/1 returns not found" do
+    MockMe.set_test_case(:swapi_starships, :not_found)
+    assert {:not_found, _} = StarWars.starships(1)
+  end
 end
