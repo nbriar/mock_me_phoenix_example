@@ -1,6 +1,6 @@
 # MockMePhoenixExample
 
-An Example of how to use the `MockMe` package in your tests.
+An Example of how to use the `MockMe` package in your tests for a Phoenix app.
 
 ## File Examples
 
