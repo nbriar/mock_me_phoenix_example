@@ -38,7 +38,7 @@ defmodule MockMePhoenixExample.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:mock_me, [path: "/home/nathan/mine/mock_me", only: [:test], runtime: false]},
+      {:mock_me, "~> 0.1.0"},
       {:httpoison, "~> 1.7"}
     ]
   end
